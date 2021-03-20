@@ -1,0 +1,70 @@
+<div class="row">
+    <ng-container *ngFor="let workExperience of WORK_EXPERIENCES">
+        <div class="col-12">
+            <mat-card class="work-experience-details">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h2>{{workExperience.profile}}</h2>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h5>{{workExperience.companyDetails.companyName}}</h5>
+                    <p class="row">
+                        <span class="col-1">
+                            <i class="fa fa-calendar-plus-o pr-1 fa-lg" aria-hidden="true"></i>
+                        </span>
+                        <span class="col-11">
+                            <strong class="work-tenure">
+                                {{workExperience.startDate | date : 'MMM-dd-yyyy'}} -
+                                {{!!workExperience.endDate ? (workExperience.endDate | date : 'MMM-dd-yyyy') :
+                                'Present'}}
+
+                                (
+                                <!-- Years -->
+                                <ng2-odometer
+                                    [number]="getExperienceYears(workExperience.startDate, workExperience.endDate)">
+                                </ng2-odometer>
+                                {{ getExperienceYears(workExperience.startDate,workExperience.endDate) > 1 ? 'Years' :
+                                Year}},
+
+                                <!-- Months -->
+                                <ng2-odometer
+                                    [number]="getExperienceMonths(workExperience.startDate, workExperience.endDate)">
+                                </ng2-odometer>
+                                {{getExperienceMonths(workExperience.startDate, workExperience.endDate) > 1 ? 'Months' :
+                                'Month'}},
+
+                                <!-- Days -->
+                                <ng2-odometer
+                                    [number]="getExperienceDays(workExperience.startDate, workExperience.endDate)">
+                                </ng2-odometer>
+                                {{getExperienceDays(workExperience.startDate, workExperience.endDate) > 1 ? 'Days' :
+                                'Day'}}
+                                )
+                            </strong>
+                        </span>
+                    </p>
+                    <p class="row">
+                        <span class="col-1">
+                            <i class="fa fa-map-marker pr-1 fa-lg" aria-hidden="true"></i>
+                        </span>
+                        <span class="col-11">{{workExperience.companyDetails.location}}</span>
+                    </p>
+                    <p class="row">
+                        <span class="col-1">
+                            <i class="fa fa-code-fork pr-1 fa-lg" aria-hidden="true"></i>
+                        </span>
+                        <span class="col-11" [innerHTML]="workExperience.description"></span>
+                    </p>
+                    <p class="row">
+                        <span class="col-1">
+                            <i class="fa fa-globe pr-1 fa-lg" aria-hidden="true"></i>
+                        </span>
+                        <a class="col-11 link" href="http://{{workExperience.companyDetails.website}}"
+                            target="_blank">{{workExperience.companyDetails.website}}</a>
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </ng-container>
+</div>

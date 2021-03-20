@@ -1,0 +1,18 @@
+<mat-tab-group mat-align-tabs="center">
+    <ng-container *ngFor="let tab of tabs">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <ng-container *ngIf="!!tab.icon">
+                    <mat-icon class="tab-icon">{{ tab.icon }}</mat-icon>
+                </ng-container>
+                {{ tab.label }}
+            </ng-template>
+
+            <ng-template matTabContent>
+                <div class="tab-content">
+                    <ndc-dynamic [ndcDynamicComponent]="tab.component"></ndc-dynamic>
+                </div>
+            </ng-template>
+        </mat-tab>
+    </ng-container>
+</mat-tab-group>

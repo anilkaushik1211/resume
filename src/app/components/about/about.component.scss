@@ -1,0 +1,62 @@
+@import "src/assets/styles/variables.scss";
+@import "src/assets/styles/helper.scss";
+
+.profile-pic {
+    border-radius: 2rem;
+    text-align: center;
+
+    img {
+        height: 14rem;
+        border-radius: 10rem;
+    }
+}
+
+.about-details {
+    border-radius: 2rem;
+    color: #fff;
+
+    .logo-1-5 {
+        width: 1.5rem;
+    }
+
+    ::ng-deep {
+        .mat-card-subtitle {
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+
+    .about-decription {
+        text-align: justify;
+        padding: 0.5rem 1rem;
+        color: #fff;
+
+        .social-icon {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            .fa {
+                font-size: 1.25rem !important;
+            }
+
+            .row {
+                .col-1 {
+                    max-width: 3rem !important;
+                }
+            }
+        }
+    }
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.mat-card {
+    background: linear-gradient(-45deg, #2e2a69, #566eb0, #23a6d5, #23d5ab);
+    animation: gradient 15s ease infinite;
+    color: #fff !important;
+}
+
+.decription {
+    text-align: center;
+}
