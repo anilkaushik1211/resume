@@ -8,7 +8,7 @@ export const WORK_EXPERIENCES = [
             website: 'www.thecodeinsight.com'
         },
         profile: 'Software Engineer',
-        startDate: '07/02/2018',
+        startDate: '07/01/2018',
         endDate: null,
         description: 'Apart from development, I am maintaining the company\'s internal cloud infrastructure. ' +
             'I am enjoying driving the company to try new technologies and tools. '

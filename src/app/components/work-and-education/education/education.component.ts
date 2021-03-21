@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EDUCATIONS } from './education.constant';
 
 @Component({
   selector: 'app-education',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
+  EDUCATIONS = EDUCATIONS;
   constructor() { }
 
   ngOnInit() {

@@ -1,10 +1,15 @@
-.work-experience-details {
+.education-details {
     text-align: justify;
     .mat-card-content {
         padding: 1.5rem;
     }
 
-    .work-tenure {
+    .organization-name {
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .study-tenure {
         font-size: 1rem;
     }
 

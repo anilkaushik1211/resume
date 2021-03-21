@@ -10,3 +10,8 @@ body { margin: 0; font-family: OpenSans !important; }
 .text-center {
     text-align: center;
 }
+
+.mat-divider {
+    border-top-width: 2px !important;
+    border-top-style: dashed !important;
+}

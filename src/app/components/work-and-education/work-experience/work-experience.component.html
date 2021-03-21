@@ -8,9 +8,16 @@
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <h5>{{workExperience.companyDetails.companyName}}</h5>
                     <p class="row">
-                        <span class="col-1">
+                        <span class="col-1" matTooltip="Organization">
+                            <i class="fa fa-industry pr-1 fa-lg" aria-hidden="true"></i>
+                        </span>
+                        <span class="col-11 organization-name">
+                            {{workExperience.companyDetails.name}}
+                        </span>
+                    </p>
+                    <p class="row">
+                        <span class="col-1" matTooltip="Work Tenure">
                             <i class="fa fa-calendar-plus-o pr-1 fa-lg" aria-hidden="true"></i>
                         </span>
                         <span class="col-11">
@@ -45,23 +52,23 @@
                         </span>
                     </p>
                     <p class="row">
-                        <span class="col-1">
+                        <span class="col-1" matTooltip="Location">
                             <i class="fa fa-map-marker pr-1 fa-lg" aria-hidden="true"></i>
                         </span>
                         <span class="col-11">{{workExperience.companyDetails.location}}</span>
+                    </p>
+                    <p class="row">
+                        <span class="col-1" matTooltip="Organziation Website">
+                            <i class="fa fa-globe pr-1 fa-lg" aria-hidden="true"></i>
+                        </span>
+                        <a class="col-11 link" href="http://{{workExperience.companyDetails.website}}"
+                            target="_blank">{{workExperience.companyDetails.website}}</a>
                     </p>
                     <p class="row">
                         <span class="col-1">
                             <i class="fa fa-code-fork pr-1 fa-lg" aria-hidden="true"></i>
                         </span>
                         <span class="col-11" [innerHTML]="workExperience.description"></span>
-                    </p>
-                    <p class="row">
-                        <span class="col-1">
-                            <i class="fa fa-globe pr-1 fa-lg" aria-hidden="true"></i>
-                        </span>
-                        <a class="col-11 link" href="http://{{workExperience.companyDetails.website}}"
-                            target="_blank">{{workExperience.companyDetails.website}}</a>
                     </p>
                 </mat-card-content>
             </mat-card>

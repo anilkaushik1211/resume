@@ -1,8 +1,7 @@
 import { AboutComponent } from 'src/app/components/about/about.component';
-import { EducationComponent } from 'src/app/components/education/education.component';
 import { ProjectsComponent } from 'src/app/components/projects/projects.component';
-import { WorkExperienceComponent } from 'src/app/components/work-experience/work-experience.component';
 import { Tab } from './tabs.model';
+import { WorkAndEducationComponent } from 'src/app/components/work-and-education/work-and-education.component';
 
 export const TABS: Array<Tab> = [
     {
@@ -11,18 +10,13 @@ export const TABS: Array<Tab> = [
         component: AboutComponent
     },
     {
-        label: 'Work Experience',
+        label: 'Work Experience & Education',
         icon: 'business_center',
-        component: WorkExperienceComponent
+        component: WorkAndEducationComponent
     },
     {
         label: 'Projects',
         icon: 'integration_instructions',
         component: ProjectsComponent
-    },
-    {
-        label: 'Education',
-        icon: 'school',
-        component: EducationComponent
-    },
+    }
 ];

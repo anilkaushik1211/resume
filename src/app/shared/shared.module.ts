@@ -13,9 +13,11 @@ import { Ng2OdometerModule } from 'ng2-odometer';
 import { HeaderComponent } from './header/header.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { AboutComponent } from 'src/app/components/about/about.component';
-import { WorkExperienceComponent } from 'src/app/components/work-experience/work-experience.component';
 import { ProjectsComponent } from 'src/app/components/projects/projects.component';
-import { EducationComponent } from 'src/app/components/education/education.component';
+import { WorkAndEducationComponent } from '../components/work-and-education/work-and-education.component';
+import { WorkExperienceComponent } from '../components/work-and-education/work-experience/work-experience.component';
+import { EducationComponent } from '../components/work-and-education/education/education.component';
+import { MatDividerModule } from '@angular/material';
 
 
 const MAT_MODULES = [
@@ -24,7 +26,8 @@ const MAT_MODULES = [
   MatButtonModule,
   MatTooltipModule,
   MatTabsModule,
-  MatCardModule
+  MatCardModule,
+  MatDividerModule
 ];
 
 const COMMON_COMPONENTS = [
@@ -34,8 +37,9 @@ const COMMON_COMPONENTS = [
 
 const TAB_COMPONENTS = [
   AboutComponent,
-  WorkExperienceComponent,
   ProjectsComponent,
+  WorkAndEducationComponent,
+  WorkExperienceComponent,
   EducationComponent
 ];
 

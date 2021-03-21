@@ -1,0 +1,31 @@
+.work-experience-details {
+    text-align: justify;
+    .mat-card-content {
+        padding: 1.5rem;
+    }
+
+    .organization-name {
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .work-tenure {
+        font-size: 1rem;
+    }
+
+    .row {
+        .col-1 {
+            max-width: 2.5rem !important;
+        }
+    }
+
+    .link {
+        color: #000 !important;
+        font-weight: bold;
+    }
+
+    &.mat-card {
+        background: linear-gradient(-45deg, #2e2a69, #566eb0, #23a6d5, #23d5ab);
+        animation: gradient 15s ease infinite;
+    }
+}
