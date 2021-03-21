@@ -26,28 +26,9 @@
                                 {{!!workExperience.endDate ? (workExperience.endDate | date : 'MMM-dd-yyyy') :
                                 'Present'}}
 
-                                (
-                                <!-- Years -->
-                                <ng2-odometer
-                                    [number]="getExperienceYears(workExperience.startDate, workExperience.endDate)">
-                                </ng2-odometer>
-                                {{ getExperienceYears(workExperience.startDate,workExperience.endDate) > 1 ? 'Years' :
-                                Year}},
-
-                                <!-- Months -->
-                                <ng2-odometer
-                                    [number]="getExperienceMonths(workExperience.startDate, workExperience.endDate)">
-                                </ng2-odometer>
-                                {{getExperienceMonths(workExperience.startDate, workExperience.endDate) > 1 ? 'Months' :
-                                'Month'}},
-
-                                <!-- Days -->
-                                <ng2-odometer
-                                    [number]="getExperienceDays(workExperience.startDate, workExperience.endDate)">
-                                </ng2-odometer>
-                                {{getExperienceDays(workExperience.startDate, workExperience.endDate) > 1 ? 'Days' :
-                                'Day'}}
-                                )
+                                (<app-date-difference [startDate]='workExperience.startDate'
+                                    [endDate]='workExperience.endDate'>
+                                </app-date-difference>)
                             </strong>
                         </span>
                     </p>

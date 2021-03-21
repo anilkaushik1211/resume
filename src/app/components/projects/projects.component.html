@@ -1,3 +1,126 @@
-<div class="text-center">
-    <img class="img-fluid" src="assets/images/work-under-maintenance.jpg" alt="">
+<div class="project-details">
+    <div class="row">
+        <div class="col-10 offset-1 mb-4">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Filter Projects
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Search projects by Role OR Tech-Environment
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ng-container *ngIf="searchForm">
+                        <form [formGroup]="searchForm">
+                            <div class="row">
+                                <div class="col-4">
+                                    <mat-form-field>
+                                        <mat-label>Role</mat-label>
+                                        <mat-select formControlName="role">
+                                            <ng-container *ngFor="let type of devTypeFilter">
+                                                <mat-option [value]="type">
+                                                    {{type.title}}
+                                                </mat-option>
+                                            </ng-container>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-4">
+                                    <mat-form-field>
+                                        <mat-label>Tech-Environments</mat-label>
+                                        <mat-select formControlName="techEnvironments" multiple>
+                                            <ng-container *ngFor="let environment of techEnvironmentFilters">
+                                                <mat-option [value]="environment">
+                                                    <div>
+                                                        <img [src]='environment.icon' class="environment-icon" />
+                                                        {{environment.name}} {{(!!environment.version) ? '- ' +
+                                                        environment.version :
+                                                        ''}}
+                                                    </div>
+                                                </mat-option>
+                                            </ng-container>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </form>
+                    </ng-container>
+
+                    <mat-action-row>
+                        <button mat-raised-button color="primary" (click)="resetSearch()">Reset</button>
+                    </mat-action-row>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div class="col-12">
+            <mat-divider class="mb-3"></mat-divider>
+        </div>
+
+        <ng-container *ngIf="projects?.length; else noData">
+            <ng-container *ngFor="let project of projects">
+                <div class="col-6 mb-4">
+                    <mat-accordion class="project-expension-panel">
+                        <mat-expansion-panel [expanded]="true">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <b>{{project.name}}</b>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    <ng-container *ngFor="let role of project.roles; let index = index">
+                                        {{role.title}} {{(index >= 0 && index < project.roles.length-1) ? '&' : '' }}
+                                            </ng-container>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+
+                            <p class="row">
+                                <span class="col-1">
+                                    <i class="fa"
+                                        [ngClass]="{'fa-hourglass-half': !project.endDate, 'fa-hourglass-end': !!project.endDate}"
+                                        aria-hidden="true"></i>
+                                </span>
+                                <span class="col-11">
+                                    {{project.startDate | date : 'MMM-yyyy'}} - {{project.endDate ? (project.endDate |
+                                    date
+                                    : 'MMM-yyyy') : 'Present' }}
+                                </span>
+                            </p>
+                            <p class="row">
+                                <span class="col-1">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                </span>
+                                <span class="col-11">
+                                    {{project.shortInfo}}
+                                </span>
+                            </p>
+                            <p class="row">
+                                <span class="col-1">
+                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                </span>
+                                <span class="col-11">
+                                    <ng-container *ngFor="let environment of project.environments; let index = index">
+                                        <div class="environment">
+                                            <img [src]='environment.icon' />
+                                            {{environment.name}} {{(!!environment.version) ? '- ' + environment.version
+                                            :
+                                            ''}}
+                                        </div>
+                                    </ng-container>
+                                </span>
+                            </p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </ng-container>
+        </ng-container>
+
+        <ng-template #noData>
+            <div>
+                No Data Found
+            </div>
+        </ng-template>
+
+    </div>
 </div>

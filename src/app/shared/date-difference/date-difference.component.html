@@ -1,0 +1,20 @@
+<ng-container *ngIf="startDate">
+    <span>
+        <!-- Years -->
+        <ng-container *ngIf="years">
+            <ng2-odometer [number]="years"></ng2-odometer>
+            {{ years > 1 ? 'Years' : 'Year' }},
+        </ng-container>
+
+
+        <!-- Months -->
+        <ng-container *ngIf="months || years">
+            <ng2-odometer [number]="months"></ng2-odometer>
+            {{ months > 1 ? 'Months' : 'Month' }},
+        </ng-container>
+
+        <!-- Days -->
+        <ng2-odometer [number]="days"></ng2-odometer>
+        {{ days > 1 ? 'Days' : 'Day' }}
+    </span>
+</ng-container>

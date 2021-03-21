@@ -1,0 +1,35 @@
+.project-details {
+    .row {
+        .col-1 {
+            max-width: 2.5rem !important;
+        }
+    }
+
+    .environment {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        background-color: lightgray;
+        padding: 2px;
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+
+        img {
+            width: 20px;
+        }
+    }
+
+    .project-expension-panel {
+        .mat-expansion-panel {
+            border-radius: 2rem;
+
+            &.mat-expanded {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.environment-icon {
+    width: 20px;
+}

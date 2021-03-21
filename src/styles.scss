@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: OpenSans !important; }
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: OpenSans !important;
+    background-color: #f2f4f8;
+}
 
 .cursor-hand {
     cursor: pointer;

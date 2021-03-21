@@ -17,7 +17,10 @@ import { ProjectsComponent } from 'src/app/components/projects/projects.componen
 import { WorkAndEducationComponent } from '../components/work-and-education/work-and-education.component';
 import { WorkExperienceComponent } from '../components/work-and-education/work-experience/work-experience.component';
 import { EducationComponent } from '../components/work-and-education/education/education.component';
-import { MatDividerModule } from '@angular/material';
+import { MatDividerModule, MatExpansionModule, MatSelectModule } from '@angular/material';
+import { DateDifferenceComponent } from './date-difference/date-difference.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const MAT_MODULES = [
@@ -27,7 +30,9 @@ const MAT_MODULES = [
   MatTooltipModule,
   MatTabsModule,
   MatCardModule,
-  MatDividerModule
+  MatDividerModule,
+  MatExpansionModule,
+  MatSelectModule
 ];
 
 const COMMON_COMPONENTS = [
@@ -46,10 +51,12 @@ const TAB_COMPONENTS = [
 @NgModule({
   declarations: [
     ...COMMON_COMPONENTS,
-    ...TAB_COMPONENTS
+    ...TAB_COMPONENTS,
+    DateDifferenceComponent
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     ...MAT_MODULES,
     DynamicModule.withComponents(TAB_COMPONENTS),
     Ng2OdometerModule.forRoot()
