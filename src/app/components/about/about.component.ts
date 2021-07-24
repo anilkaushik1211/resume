@@ -1,3 +1,4 @@
+import { TECH_ENVIRONMENT_ICON } from './../../core/constants/tech-environment.constant';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+
+  TECH_ENVIRONMENT_ICON = TECH_ENVIRONMENT_ICON;
 
   constructor() { }
 

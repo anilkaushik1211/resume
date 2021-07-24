@@ -3,18 +3,20 @@
         <!-- Years -->
         <ng-container *ngIf="years">
             <ng2-odometer [number]="years"></ng2-odometer>
-            {{ years > 1 ? 'Years' : 'Year' }},
+            {{ years > 1 ? 'Years' : 'Year' }} {{ (months || days) ? ',' : '' }}
         </ng-container>
 
 
         <!-- Months -->
-        <ng-container *ngIf="months || years">
+        <ng-container *ngIf="months || days">
             <ng2-odometer [number]="months"></ng2-odometer>
-            {{ months > 1 ? 'Months' : 'Month' }},
+            {{ months > 1 ? 'Months' : 'Month' }} {{ days ? ',' : '' }}
         </ng-container>
 
         <!-- Days -->
-        <ng2-odometer [number]="days"></ng2-odometer>
-        {{ days > 1 ? 'Days' : 'Day' }}
+        <ng-container *ngIf="days">
+            <ng2-odometer [number]="days"></ng2-odometer>
+            {{ days > 1 ? 'Days' : 'Day' }}
+        </ng-container>
     </span>
 </ng-container>

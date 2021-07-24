@@ -40,7 +40,7 @@ export class DateDifferenceComponent implements OnInit {
     const days = Math.floor(differenceBtwnTime / (1000 * 3600 * 24));
     const months = Math.floor(differenceBtwnTime / (1000 * 3600 * 24 * 30.44));
 
-    return days - (months * 30.44);
+    return Math.floor(days - (months * 30.44));
   }
 
 
@@ -50,6 +50,7 @@ export class DateDifferenceComponent implements OnInit {
     }
 
     startDate = new Date(startDate);
+    startDate.setDate(startDate.getDate() - 1);
     endDate = new Date(endDate);
     endDate.setDate(endDate.getDate() + 1);
 

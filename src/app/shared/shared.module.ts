@@ -14,13 +14,13 @@ import { HeaderComponent } from './header/header.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { AboutComponent } from 'src/app/components/about/about.component';
 import { ProjectsComponent } from 'src/app/components/projects/projects.component';
-import { WorkAndEducationComponent } from '../components/work-and-education/work-and-education.component';
-import { WorkExperienceComponent } from '../components/work-and-education/work-experience/work-experience.component';
-import { EducationComponent } from '../components/work-and-education/education/education.component';
+import { WorkExperienceComponent } from '../components/work-experience/work-experience.component';
+import { EducationComponent } from '../components/education/education.component';
 import { MatDividerModule, MatExpansionModule, MatSelectModule } from '@angular/material';
 import { DateDifferenceComponent } from './date-difference/date-difference.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { LinkPipe } from './pipes/link.pipe';
 
 
 const MAT_MODULES = [
@@ -43,15 +43,19 @@ const COMMON_COMPONENTS = [
 const TAB_COMPONENTS = [
   AboutComponent,
   ProjectsComponent,
-  WorkAndEducationComponent,
   WorkExperienceComponent,
   EducationComponent
+];
+
+const PIPES = [
+  LinkPipe
 ];
 
 @NgModule({
   declarations: [
     ...COMMON_COMPONENTS,
     ...TAB_COMPONENTS,
+    ...PIPES,
     DateDifferenceComponent
   ],
   imports: [
@@ -63,7 +67,8 @@ const TAB_COMPONENTS = [
   ],
   exports: [
     ...COMMON_COMPONENTS,
-    ...TAB_COMPONENTS
+    ...TAB_COMPONENTS,
+    ...PIPES
   ]
 })
 export class SharedModule { }

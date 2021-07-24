@@ -52,7 +52,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       .subscribe(value => {
         if (value) {
           this.techEnvironmentFilters = TECH_ENVIRONMENTS.filter(env =>
-            env.types.includes(value.id)
+            env.developerTypes.includes(value.id)
           );
 
           if (value.id === DEVELOPER_TYPE.ANDROID_APP.id) {

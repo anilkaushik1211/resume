@@ -1,6 +1,6 @@
 <div class="row">
     <ng-container *ngFor="let workExperience of WORK_EXPERIENCES">
-        <div class="col-12">
+        <div class="col-12 mb-2">
             <mat-card class="work-experience-details">
                 <mat-card-header>
                     <mat-card-title>
@@ -22,13 +22,13 @@
                         </span>
                         <span class="col-11">
                             <strong class="work-tenure">
-                                {{workExperience.startDate | date : 'MMM-dd-yyyy'}} -
-                                {{!!workExperience.endDate ? (workExperience.endDate | date : 'MMM-dd-yyyy') :
+                                {{workExperience.startDate | date : 'dd MMM yyyy'}} -
+                                {{!!workExperience.endDate ? (workExperience.endDate | date : 'dd MMM yyyy') :
                                 'Present'}}
 
-                                (<app-date-difference [startDate]='workExperience.startDate'
+                                ( <app-date-difference [startDate]='workExperience.startDate'
                                     [endDate]='workExperience.endDate'>
-                                </app-date-difference>)
+                                </app-date-difference> )
                             </strong>
                         </span>
                     </p>
@@ -42,15 +42,21 @@
                         <span class="col-1" matTooltip="Organziation Website">
                             <i class="fa fa-globe pr-1 fa-lg" aria-hidden="true"></i>
                         </span>
-                        <a class="col-11 link" href="http://{{workExperience.companyDetails.website}}"
-                            target="_blank">{{workExperience.companyDetails.website}}</a>
-                    </p>
-                    <p class="row">
-                        <span class="col-1">
-                            <i class="fa fa-code-fork pr-1 fa-lg" aria-hidden="true"></i>
+                        <span class="col-11">
+                            <a class="link" [href]="workExperience.companyDetails.website" target="_blank">
+                                {{workExperience.companyDetails.website | link }}
+                            </a>
                         </span>
-                        <span class="col-11" [innerHTML]="workExperience.description"></span>
                     </p>
+
+                    <ng-container *ngIf="workExperience.description?.length">
+                        <p class="row">
+                            <span class="col-1">
+                                <i class="fa fa-code-fork pr-1 fa-lg" aria-hidden="true"></i>
+                            </span>
+                            <span class="col-11" [innerHTML]="workExperience.description"></span>
+                        </p>
+                    </ng-container>
                 </mat-card-content>
             </mat-card>
         </div>
