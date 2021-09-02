@@ -3,11 +3,25 @@ import { TECH_ENVIRONMENT } from 'src/app/core/constants/tech-environment.consta
 
 export const PROJECTS = [
     {
+        name: 'EAP',
+        roles: [DEVELOPER_TYPE.FULL_STACK],
+        organization: 'Virtusa Consultancy Services',
+        startDate: '07/01/2021',
+        endDate: null,
+        shortInfo: 'Employee Assistance Program',
+        environments: [
+            TECH_ENVIRONMENT.ANGULAR_11,
+            TECH_ENVIRONMENT.SPRING_BOOT,
+            TECH_ENVIRONMENT.JAVA_8,
+            TECH_ENVIRONMENT.MONOGO_DB
+        ]
+    },
+    {
         name: 'EAB',
         roles: [DEVELOPER_TYPE.FULL_STACK],
         organization: 'Virtusa Consultancy Services',
         startDate: '05/20/2021',
-        endDate: null,
+        endDate: '06/30/2021',
         shortInfo: 'Enterprise Admin Builder',
         environments: [
             TECH_ENVIRONMENT.ANGULAR_11,
@@ -86,6 +100,7 @@ export const PROJECTS = [
         name: 'Talent-Hunt',
         roles: [DEVELOPER_TYPE.FULL_STACK],
         organization: 'CodeInsight Technologies Pvt. LTD.',
+        link: 'https://talenthunt.thecodeinsight.com',
         startDate: '10/01/2018',
         endDate: '02/28/2019',
         shortInfo: 'Online aptitude test portal.',

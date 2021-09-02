@@ -8,7 +8,7 @@
                             Filter Projects
                         </mat-panel-title>
                         <mat-panel-description>
-                            Search projects by Role OR Tech-Environment
+                            Filter projects by Role OR Tech-Environment
                         </mat-panel-description>
                     </mat-expansion-panel-header>
 
@@ -101,6 +101,16 @@
                                 </span>
                                 <span class="col-11">
                                     {{project.organization}}
+                                </span>
+                            </p>
+                            <p *ngIf="project.link" class="row">
+                                <span class="col-1">
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                </span>
+                                <span class="col-11">
+                                    <a class="link" [href]="project.link" target="_blank">
+                                        {{project.link | link }}
+                                    </a>
                                 </span>
                             </p>
                             <p class="row">
