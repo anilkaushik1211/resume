@@ -8,7 +8,7 @@ export const WORK_EXPERIENCES = [
             website: 'https://www.virtusa.com'
         },
         profile: 'Associate Consultant - Technology',
-        startDate: '05/01/2021',
+        startDate: '05/03/2021',
         endDate: null,
         description: ''
     },

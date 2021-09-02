@@ -1,4 +1,25 @@
 <div class="row">
+    <div class="col-12 mb-3">
+        <mat-card class="work-experience-details">
+            <mat-card-header>
+                <mat-card-title>
+                    <h3>Total Experience
+                        <app-date-difference class="total-experience" startDate='07/02/2018' [endDate]='currentDate'>
+                        </app-date-difference>
+                    </h3>
+                </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <mat-divider class="mb-3"></mat-divider>
+    </div>
+</div>
+
+<div class="row">
     <ng-container *ngFor="let workExperience of WORK_EXPERIENCES">
         <div class="col-12 mb-2">
             <mat-card class="work-experience-details">
