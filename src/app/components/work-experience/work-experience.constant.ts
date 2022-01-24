@@ -5,7 +5,8 @@ export const WORK_EXPERIENCES = [
             location: 'Gurugram, Haryana',
             lat: 28.511433579239615,
             long: 77.09030986435263,
-            website: 'https://www.virtusa.com'
+            website: 'https://www.virtusa.com',
+            logo: 'assets/images/company_logo/Virtusa_logo.jpg'
         },
         profile: 'Associate Consultant - Technology',
         startDate: '05/03/2021',
@@ -18,7 +19,8 @@ export const WORK_EXPERIENCES = [
             location: 'Mohali, Punjab',
             lat: 30.709659,
             long: 76.707460,
-            website: 'https://www.thecodeinsight.com'
+            website: 'https://www.thecodeinsight.com',
+            logo: 'assets/images/company_logo/CodeInsight_logo.jpg'
         },
         profile: 'Software Engineer',
         startDate: '10/01/2018',
@@ -31,7 +33,8 @@ export const WORK_EXPERIENCES = [
             location: 'Mohali, Punjab',
             lat: 30.709659,
             long: 76.707460,
-            website: 'https://www.thecodeinsight.com'
+            website: 'https://www.thecodeinsight.com',
+            logo: 'assets/images/company_logo/CodeInsight_logo.jpg'
         },
         profile: 'Software Engineer Intern',
         startDate: '07/02/2018',

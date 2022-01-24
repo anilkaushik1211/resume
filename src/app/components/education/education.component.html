@@ -4,8 +4,10 @@
             <div class="col-12">
                 <mat-card class="education-details">
                     <mat-card-header>
+                        <img mat-card-avatar *ngIf="education.collegeDetails.logo" [src]="education.collegeDetails.logo"
+                            alt="College-Logo" />
                         <mat-card-subtitle>
-                            <h2>{{education.title}}</h2>
+                            <h2>{{ education.title }}</h2>
                         </mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
@@ -14,7 +16,7 @@
                                 <i class="fa fa-university pr-1 fa-lg" aria-hidden="true"></i>
                             </span>
                             <span class="col-11 organization-name">
-                                {{education.collegeDetails.name}}
+                                {{ education.collegeDetails.name }}
                             </span>
                         </p>
                         <p class="row study-tenure">
@@ -22,22 +24,28 @@
                                 <i class="fa fa-calendar-plus-o pr-1 fa-lg" aria-hidden="true"></i>
                             </span>
                             <span class="col-11">
-                                {{education.startDate | date : 'MMM-yyyy'}} -
-                                {{!!education.endDate ? (education.endDate | date : 'MMM-yyyy') : 'Present'}}
+                                {{ education.startDate | date: "MMM-yyyy" }} -
+                                {{
+                                !!education.endDate
+                                ? (education.endDate | date: "MMM-yyyy")
+                                : "Present"
+                                }}
                             </span>
                         </p>
                         <p class="row">
                             <span class="col-1" matTooltip="University Location">
                                 <i class="fa fa-map-marker pr-1 fa-lg" aria-hidden="true"></i>
                             </span>
-                            <span class="col-11">{{education.collegeDetails.location}}</span>
+                            <span class="col-11">{{
+                                education.collegeDetails.location
+                                }}</span>
                         </p>
                         <p class="row">
                             <span class="col-1" matTooltip="University Website">
                                 <i class="fa fa-globe pr-1 fa-lg" aria-hidden="true"></i>
                             </span>
-                            <a class="col-11 link" href="http://{{education.collegeDetails.website}}"
-                                target="_blank">{{education.collegeDetails.website}}</a>
+                            <a class="col-11 link" href="http://{{ education.collegeDetails.website }}"
+                                target="_blank">{{ education.collegeDetails.website }}</a>
                         </p>
                         <p class="row">
                             <span class="col-1">

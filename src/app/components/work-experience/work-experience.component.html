@@ -2,9 +2,11 @@
     <div class="col-12 mb-3">
         <mat-card class="work-experience-details">
             <mat-card-header>
-                <mat-card-subtitle><h4>Total Experience</h4></mat-card-subtitle>
+                <mat-card-subtitle>
+                    <h4>Total Experience</h4>
+                </mat-card-subtitle>
                 <mat-card-title>
-                    <app-date-difference startDate='07/02/2018' [endDate]='currentDate'>
+                    <app-date-difference startDate="07/02/2018" [endDate]="currentDate">
                     </app-date-difference>
                 </mat-card-title>
             </mat-card-header>
@@ -23,8 +25,10 @@
         <div class="col-12 mb-2">
             <mat-card class="work-experience-details">
                 <mat-card-header>
+                    <img mat-card-avatar *ngIf="workExperience.companyDetails.logo"
+                        [src]="workExperience.companyDetails.logo" alt="Company-Logo" />
                     <mat-card-subtitle>
-                        <h2>{{workExperience.profile}}</h2>
+                        <h2>{{ workExperience.profile }}</h2>
                     </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
@@ -33,7 +37,7 @@
                             <i class="fa fa-industry pr-1 fa-lg" aria-hidden="true"></i>
                         </span>
                         <span class="col-11 organization-name">
-                            {{workExperience.companyDetails.name}}
+                            {{ workExperience.companyDetails.name }}
                         </span>
                     </p>
                     <p class="row">
@@ -42,13 +46,18 @@
                         </span>
                         <span class="col-11">
                             <strong class="work-tenure">
-                                {{workExperience.startDate | date : 'dd MMM yyyy'}} -
-                                {{!!workExperience.endDate ? (workExperience.endDate | date : 'dd MMM yyyy') :
-                                'Present'}}
+                                {{ workExperience.startDate | date: "dd MMM yyyy" }} -
+                                {{
+                                !!workExperience.endDate
+                                ? (workExperience.endDate | date: "dd MMM yyyy")
+                                : "Present"
+                                }}
 
-                                ( <app-date-difference [startDate]='workExperience.startDate'
-                                    [endDate]='workExperience.endDate'>
-                                </app-date-difference> )
+                                (
+                                <app-date-difference [startDate]="workExperience.startDate"
+                                    [endDate]="workExperience.endDate">
+                                </app-date-difference>
+                                )
                             </strong>
                         </span>
                     </p>
@@ -56,7 +65,9 @@
                         <span class="col-1" matTooltip="Location">
                             <i class="fa fa-map-marker pr-1 fa-lg" aria-hidden="true"></i>
                         </span>
-                        <span class="col-11">{{workExperience.companyDetails.location}}</span>
+                        <span class="col-11">{{
+                            workExperience.companyDetails.location
+                            }}</span>
                     </p>
                     <p class="row">
                         <span class="col-1" matTooltip="Organziation Website">
@@ -64,7 +75,7 @@
                         </span>
                         <span class="col-11">
                             <a class="link" [href]="workExperience.companyDetails.website" target="_blank">
-                                {{workExperience.companyDetails.website | link }}
+                                {{ workExperience.companyDetails.website | link }}
                             </a>
                         </span>
                     </p>
