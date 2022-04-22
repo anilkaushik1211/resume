@@ -1,6 +1,20 @@
 export const WORK_EXPERIENCES = [
     {
         companyDetails: {
+            name: 'ITC Infotech India Ltd.',
+            location: 'Bengaluru, Karnataka',
+            lat: 12.900795568808034,
+            long: 77.54011743215668,
+            website: 'https://www.itcinfotech.com',
+            logo: 'assets/images/company_logo/ITC_Infotech_logo.png'
+        },
+        profile: 'Associate IT Consultant',
+        startDate: '04/12/2022',
+        endDate: null,
+        description: ''
+    },
+    {
+        companyDetails: {
             name: 'Virtusa Consulatncy Services',
             location: 'Gurugram, Haryana',
             lat: 28.511433579239615,
@@ -10,7 +24,7 @@ export const WORK_EXPERIENCES = [
         },
         profile: 'Associate Consultant - Technology',
         startDate: '05/03/2021',
-        endDate: null,
+        endDate: '04/11/2022',
         description: ''
     },
     {

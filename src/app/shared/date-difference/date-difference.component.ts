@@ -49,16 +49,12 @@ export class DateDifferenceComponent implements OnInit {
       endDate = new Date();
     }
 
-    startDate = new Date(startDate);
-    startDate.setDate(startDate.getDate() - 1);
-    endDate = new Date(endDate);
-    endDate.setDate(endDate.getDate() + 1);
+    startDate = new Date(startDate).setHours(0, 0, 0, 0);
+    endDate = new Date(endDate).setHours(23, 59, 59, 999);
 
-    const startTime = startDate.getTime();
-    const endTime = endDate.getTime();
-    const differenceBtwnTime = endTime - startTime;
-
-    return differenceBtwnTime;
+    const startTime = new Date(startDate).getTime();
+    const endTime = new Date(endDate).getTime();
+    return endTime - startTime;
   }
 
 }
