@@ -10,7 +10,7 @@ export const WORK_EXPERIENCES = [
         },
         profile: 'Associate IT Consultant',
         startDate: '04/12/2022',
-        endDate: null,
+        endDate: '07/05/2023',
         description: ''
     },
     {

@@ -8,7 +8,8 @@ export const TECH_ENVIRONMENT_ICON = {
     REACT_JS: 'assets/images/tech_logo/react-js-logo.png',
     MY_SQL: 'assets/images/tech_logo/mysql-logo.png',
     HIBERNATE: 'assets/images/tech_logo/hibernate-logo.png',
-    MONGO_DB: 'assets/images/tech_logo/mongodb-logo.png'
+    MONGO_DB: 'assets/images/tech_logo/mongodb-logo.png',
+    SQL_SERVER: 'assets/images/tech_logo/sql-server-logo.svg',
 };
 
 export const TECH_ENVIRONMENT = {
@@ -110,6 +111,12 @@ export const TECH_ENVIRONMENT = {
         icon: TECH_ENVIRONMENT_ICON.MONGO_DB,
         developerTypes: [DEVELOPER_TYPE.BACK_END.id, DEVELOPER_TYPE.FULL_STACK.id]
     },
+    SQL_SERVER: {
+        key: 'SQL_SERVER',
+        name: 'SQL Server',
+        icon: TECH_ENVIRONMENT_ICON.SQL_SERVER,
+        developerTypes: [DEVELOPER_TYPE.BACK_END.id, DEVELOPER_TYPE.FULL_STACK.id]
+    },
 };
 
 export const TECH_ENVIRONMENTS = [
@@ -124,5 +131,6 @@ export const TECH_ENVIRONMENTS = [
     TECH_ENVIRONMENT.REACT_NATIVE,
     TECH_ENVIRONMENT.HIBERNATE,
     TECH_ENVIRONMENT.MY_SQL,
-    TECH_ENVIRONMENT.MONOGO_DB
+    TECH_ENVIRONMENT.MONOGO_DB,
+    TECH_ENVIRONMENT.SQL_SERVER,
 ];
